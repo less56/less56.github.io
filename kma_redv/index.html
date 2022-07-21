@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>(자동 복구) 기상청 실시간 지진 감지 영상</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        
+        #overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            color: white;
+            z-index: 1;
+        }
+
+        #iframe {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- (기상청 지진화산, 실제사용) https://www.youtube.com/embed/live_stream?channel=UCswljOP8o3jFKec9F8mhcMA&enablejsapi=1&autoplay=1&rel=0 -->
+    <!-- (LDH Dev, 디버그용) https://www.youtube.com/embed/live_stream?channel=UCv4vRNSb6Q8Ep5p1LpECpUQ&enablejsapi=1&autoplay=1&rel=0 -->
+    <!-- (Daegu Cam, 내 채널) https://www.youtube.com/embed/live_stream?channel=UC8ixXgeqKOg6NU80VYfxptQ&enablejsapi=1&autoplay=1&rel=0 -->
+    <!-- (지감영 녹화본) https://www.youtube.com/embed/Gm8g6zZH5mw?enablejsapi=1&autoplay=1&rel=0 -->
+
+    <div id="overlay">
+        <!-- <h1>:(</h1>
+        <h2>기상청 실시간 지진 감지 영상이 오프라인이거나 재생이 불가합니다</h2> -->
+    </div>
+
+    <iframe id="iframe" src="https://www.youtube.com/embed/live_stream?channel=UCswljOP8o3jFKec9F8mhcMA&enablejsapi=1&autoplay=1&rel=0" frameborder="0" allowfullscreen>
+    </iframe>
+    <script type="text/javascript" src="./main.js"></script>
+</body>
+
+</html>
