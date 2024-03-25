@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Scheme Bypass</title>
+    <style>
+        warn {
+            background-color: red;
+            color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>
+        이 기기의 앱에 접근중<br>
+        <warn>앱이 무단으로 조작될 수 있음!</warn><br>
+        <warn style="color:white;">신뢰할 수 없는 URL이면 페이지 닫기!</warn><br>
+        <noscript>Error(오류): JavaScript 미지원 브라우저</noscript>
+    </h1>
+    URL: <a id="url"></a><br><br>
+
+    <script type="text/javascript">
+        const urlParam = new URL(location.href).searchParams;
+
+        const url = urlParam.get('url');
+
+        if (url) {
+            const urlElem = document.getElementById("url");
+            urlElem.href = url;
+            urlElem.textContent = url;
+
+            if (urlParam.get('dev') != "1") {
+                location.href = url;
+                history.length <= 1 ? window.close() : history.back();
+            } else {
+                document.writeln("dev");
+            }
+        }
+    </script>
+</body>
+
+</html>
