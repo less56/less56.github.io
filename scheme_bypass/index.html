@@ -24,7 +24,7 @@
         const url = new URL(location.href);
         const param = url.searchParams;
 
-        const target = url.searchParams.get('url').trim();
+        const target = url.searchParams.get('url')?.trim();
 
         if (target) {
             const urlElem = document.getElementById("url");
@@ -36,10 +36,10 @@
             }
 
             if (url.searchParams.get('dev') != "1") {
-                window.navigation.addEventListener("navigate", () => {
-                    history.length <= 1 ? window.close() : history.back();
-                });
                 location.href = target;
+                setTimeout(() => {
+                    history.length <= 1 ? window.close() : history.back();
+                }, 500);
             } else {
                 document.writeln("dev");
             }
