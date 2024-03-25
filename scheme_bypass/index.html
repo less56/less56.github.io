@@ -7,33 +7,39 @@
 
 <body>
     <h1>
-        Scheme Bypass<br>
-        <span id="info"></span>
-        <noscript>ERROR: JavaScript 작동 불가</noscript>
+        <span id="info"><noscript>ERROR: JavaScript 작동 불가</noscript></span><br>
+        <div id="close-sec-text" style="display: none"><span id="close-sec-val">?</span>초 후 닫힘</div>
     </h1>
 
     <script type="text/javascript">
+        const closeSecText = document.querySelector("#close-sec-text");
+        const closeSecVal = document.querySelector("#close-sec-val");
         const info = document.querySelector("#info");
+
+        const autoClose = () => {
+            history.length <= 1 ? window.close() : history.back();
+        }
+
         const params = (new URL(location.href)).searchParams;
         const target = params.get('url')?.trim() || "";
-
         if (target !== "") {
-            const autoClose = () => {
-                history.length <= 1 ? window.close() : history.back();
-            }
             const flag = params.get('flag')?.trim().split(",") || "";
-
             if (!target.startsWith("http") && !flag.includes("skip") &&
-                !confirm("⚠ 보안 위험 경고 ⚠\n외부 앱이 실행될 것 입니다!\n앱이 조작될 수 있으며 신뢰하지 않으면 취소하십시오.\n\n외부 앱 실행 URL:\n" + target + "\n\n[ENTER] 확인 | [ESC] 취소")) {
-                autoClose();
-            }
-
+                !confirm("⚠ 보안 위험 경고 ⚠\n외부 앱이 실행될 것 입니다!\n앱이 조작될 수 있으며 신뢰하지 않으면 취소하십시오.\n\n외부 앱 실행 URL:\n" + target + "\n\n[ENTER] 확인 | [ESC] 취소")) autoClose();
             location.href = target;
+            info.textContent = "실행 완료";
 
-            info.textContent = "곧 페이지가 닫힙니다";
-            setTimeout(autoClose, 5000);
+            let closeSec = 5;
+            closeSecVal.textContent = closeSec;
+            closeSecText.style.display = "initial";
+
+            setInterval(() => {
+                closeSec--;
+                if (closeSec === 0) autoClose();
+                closeSecVal.textContent = closeSec;
+            }, 1000);
         } else {
-            info.textContent = "URL 입력 필요.";
+            info.textContent = "ERROR: URL 파라미터 입력 필요";
         }
     </script>
 </body>
