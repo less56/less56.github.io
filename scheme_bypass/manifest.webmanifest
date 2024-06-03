@@ -2,14 +2,21 @@
     "background_color": "#ffffff",
     "dir": "ltr",
     "display": "standalone",
-    "name": "Scheme Bypass",
     "orientation": "any",
     "scope": "/scheme_bypass/",
+    "name": "Scheme Bypass",
     "short_name": "Scheme Bypass",
-    "start_url": "/scheme_bypass/",
+    "start_url": "/scheme_bypass/index.html",
     "theme_color": "#ffffff",
     "description": "Scheme Bypass",
     "lang": "ko",
+    "icons": [
+        {
+            "src": "res/images/icon_512.jpg",
+            "sizes": "512x512",
+            "type": "image/jpg"
+        }
+    ],
     "categories": [
         "utilities"
     ]
