@@ -4,9 +4,15 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" href="res/images/icon_512x512.jpg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Scheme Bypass</title>
+    <script type="module">
+        import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
+        document.body.appendChild(document.createElement('pwa-update'));
+    </script>
 </head>
 
 <body>

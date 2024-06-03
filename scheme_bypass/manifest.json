@@ -1,0 +1,16 @@
+{
+    "background_color": "#ffffff",
+    "dir": "ltr",
+    "display": "standalone",
+    "name": "Scheme Bypass",
+    "orientation": "any",
+    "scope": "/scheme_bypass/",
+    "short_name": "Scheme Bypass",
+    "start_url": "/scheme_bypass/",
+    "theme_color": "#ffffff",
+    "description": "Scheme Bypass",
+    "lang": "ko",
+    "categories": [
+        "utilities"
+    ]
+}
