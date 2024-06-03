@@ -1,20 +1,18 @@
 {
     "background_color": "#ffffff",
-    "dir": "ltr",
     "display": "standalone",
-    "orientation": "any",
-    "scope": "/scheme_bypass/",
     "name": "Scheme Bypass",
     "short_name": "Scheme Bypass",
     "start_url": "/scheme_bypass/index.html",
     "theme_color": "#ffffff",
     "description": "Scheme Bypass",
     "lang": "ko",
+    "id": "/scheme_bypass/index.html",
     "icons": [
         {
-            "src": "res/images/icon_512.jpg",
+            "src": "res/images/icon_512.png",
             "sizes": "512x512",
-            "type": "image/jpg"
+            "type": "image/png"
         }
     ],
     "categories": [
