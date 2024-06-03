@@ -8,6 +8,12 @@
     "description": "Scheme Bypass",
     "lang": "ko",
     "id": "/scheme_bypass/index.html",
+    "protocol_handlers": [
+        {
+            "protocol": "web+schemebypass",
+            "url": "/scheme_bypass/index.html?flag=skip&url=%s"
+        }
+    ],
     "icons": [
         {
             "src": "res/images/icon_512.png",

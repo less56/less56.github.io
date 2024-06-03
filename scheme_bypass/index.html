@@ -27,7 +27,7 @@
         };
 
         const params = (new URL(location.href)).searchParams;
-        const target = params.get('url')?.trim() || "";
+        const target = params.get('url')?.trim().replace("web+schemebypass://", "") || "";
         if (target !== "") {
             const flag = params.get('flag')?.trim().split(",") || "";
 
@@ -53,6 +53,13 @@
         }
 
         document.title = params.get('title')?.trim() || document.title;
+    </script>
+    <script>
+        // navigator.registerProtocolHandler(
+        //     "web+schemebypass",
+        //     "/scheme_bypass/index.html?url=%s",
+        //     "scheme_bypass handler",
+        // );
     </script>
 </body>
 
