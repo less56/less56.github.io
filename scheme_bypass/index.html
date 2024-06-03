@@ -1,7 +1,11 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="ko">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Scheme Bypass</title>
 </head>
 
@@ -18,14 +22,18 @@
 
         const autoClose = () => {
             history.length <= 1 ? window.close() : history.back();
-        }
+        };
 
         const params = (new URL(location.href)).searchParams;
         const target = params.get('url')?.trim() || "";
         if (target !== "") {
             const flag = params.get('flag')?.trim().split(",") || "";
-            if (!target.startsWith("http") && !flag.includes("skip") &&
-                !confirm("⚠ 보안 위험 경고 ⚠\n외부 앱이 실행될 것 입니다!\n앱이 조작될 수 있으며 신뢰하지 않으면 취소하십시오.\n\n외부 앱 실행 URL:\n" + target + "\n\n[ENTER] 확인 | [ESC] 취소")) autoClose();
+
+            if (!target.startsWith("http") &&
+                !flag.includes("skip") &&
+                !confirm("⚠ 보안 위험 경고 ⚠\n외부 앱이 실행될 것 입니다!\n앱이 조작될 수 있으며 신뢰하지 않으면 취소하십시오.\n\n외부 앱 실행 URL:\n" + target + "\n\n[ENTER] 확인 | [ESC] 취소")
+            ) autoClose();
+
             location.href = target;
             info.textContent = "실행 완료";
 
@@ -41,6 +49,8 @@
         } else {
             info.textContent = "ERROR: URL 파라미터 입력 필요";
         }
+
+        document.title = params.get('title')?.trim() || document.title;
     </script>
 </body>
 
