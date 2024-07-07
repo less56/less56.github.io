@@ -4,8 +4,6 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="_manifest" href="manifest.json">
-    <link rel="apple-touch-icon" href="res/images/icon_512.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Scheme Bypass</title>
@@ -27,7 +25,7 @@
         };
 
         const params = (new URL(location.href)).searchParams;
-        const target = params.get('url')?.trim().replace("web+schemebypass://", "") || "";
+        const target = params.get('url')?.trim() || "";
         if (target !== "") {
             const flag = params.get('flag')?.trim().split(",") || "";
 
@@ -53,13 +51,6 @@
         }
 
         document.title = params.get('title')?.trim() || document.title;
-    </script>
-    <script>
-        // navigator.registerProtocolHandler(
-        //     "web+schemebypass",
-        //     "/scheme_bypass/index.html?url=%s",
-        //     "scheme_bypass handler",
-        // );
     </script>
 </body>
 

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="res/images/icon_512.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Scheme Bypass PWA</title>
+</head>
+
+<body>
+    <h1>
+        <span id="info"><noscript>ERROR: JavaScript 작동 불가</noscript></span><br>
+        <div id="close-sec-text" style="display: none"><span id="close-sec-val">?</span>초 후 닫힘</div>
+    </h1>
+
+    <script type="text/javascript">
+        const closeSecText = document.querySelector("#close-sec-text");
+        const closeSecVal = document.querySelector("#close-sec-val");
+        const info = document.querySelector("#info");
+
+        info.textContent = 'PWA setup';
+
+    </script>
+</body>
+
+</html>

@@ -3,15 +3,15 @@
     "display": "standalone",
     "name": "Scheme Bypass",
     "short_name": "Scheme Bypass",
-    "start_url": "/scheme_bypass/index.html",
+    "start_url": "/scheme_bypass/pwa/index.html",
     "theme_color": "#ffffff",
     "description": "Scheme Bypass",
     "lang": "ko",
-    "id": "/scheme_bypass/index.html",
+    "id": "/scheme_bypass/pwa/index.html",
     "protocol_handlers": [
         {
             "protocol": "web+schemebypass",
-            "url": "/scheme_bypass/index.html?flag=skip&url=%s"
+            "url": "/scheme_bypass/index.html?ph=%s"
         }
     ],
     "icons": [
