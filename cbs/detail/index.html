@@ -2,22 +2,27 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh"
-        content="0; url=https://www.safekorea.go.kr/idsiSFK/neo/sfk/cs/sfc/dis/disasterMsgList.jsp?menuSeq=679">
-    </meta>
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>재난문자</title>
 </head>
 
 <body>
     <script type="text/javascript">
-        location.href = location.protocol + '//www.safekorea.go.kr/idsiSFK/neo/sfk/cs/sfc/dis/disasterMsgList.jsp?menuSeq=679';
+        let url = '//www.safekorea.go.kr/idsiSFK/neo/sfk/cs/sfc/dis/disasterMsgList.jsp?menuSeq=679';
+
+        if (/android|avantgo|blackberry|bada\/|bb|meego|ipad|playbook|silk|tablet|windows phone|mobile|iemobile|opera mini|palm|phone|kindle|silk|mmp|symbian|vodafone|opera mobi|opera mini|ucbrowser|smartphone|mib|mqqbrowser|midp|j2me/i.test((navigator.userAgent || navigator.vendor || window.opera).toLowerCase())) {
+            url = '//m.safekorea.go.kr/idsiSFK/neo/main_m/dis/disasterDataList.html';
+        }
+
+        location.href = location.protocol + url;
     </script>
 
     <h1>
-        <a href="https://www.safekorea.go.kr/idsiSFK/neo/sfk/cs/sfc/dis/disasterMsgList.jsp?menuSeq=679">국민재난안전포털
-            재난문자</a>
+        <a href="https://www.safekorea.go.kr/idsiSFK/neo/sfk/cs/sfc/dis/disasterMsgList.jsp?menuSeq=679">국민재난안전포털 재난문자
+            (PC 화면)</a><br><br>
+        <a href="https://m.safekorea.go.kr/idsiSFK/neo/main_m/dis/disasterDataList.html">국민재난안전포털 재난문자
+            (모바일 화면)</a>
     </h1>
 </body>
 
