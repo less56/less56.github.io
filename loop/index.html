@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>LOOP</title>
+</head>
+
+<script>
+    const params = (new URL(location.href)).searchParams;
+        const url = params.get('url')?.trim();
+    if (url) {
+        location.href = url;
+    }
+    document.write("<h1>파라미터 입력 필요</h1>");
+</script>
