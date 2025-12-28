@@ -8,19 +8,25 @@
 </head>
 
 <body>
+    <h1>
+        <span id="info"><noscript>ERROR: JavaScript 작동 불가</noscript></span><br>
+    </h1>
     <script type="text/javascript">
         const params = (new URL(location.href)).searchParams;
-      
-        let url = '';
+        
+        let url = params.get('pc')?.trim();
+        if (!url) {
+            info.textContent = "ERROR: URL 파라미터 입력 필요";
+            return;
+        }
+        
         if (/android|avantgo|blackberry|bada\/|bb|meego|ipad|playbook|silk|tablet|windows phone|mobile|iemobile|opera mini|palm|phone|kindle|silk|mmp|symbian|vodafone|opera mobi|opera mini|ucbrowser|smartphone|mib|mqqbrowser|midp|j2me/i.test((navigator.userAgent || navigator.vendor || window.opera).toLowerCase())) {
-            url = params.get('mobile')?.trim();
-        } else {
-            url = params.get('pc')?.trim();
+            const mobileURL = params.get('mobile')?.trim();
+            if (mobileURL) url = mobileURL;
         }
 
         location.href = location.protocol + url;
     </script>
-    <nosciprt>오류: Javascript를 실행할 수 없습니다.</nosciprt>
 </body>
 
 </html>
