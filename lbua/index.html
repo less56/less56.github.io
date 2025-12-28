@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Link by user-agent</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        const params = (new URL(location.href)).searchParams;
+      
+        let url = '';
+        if (/android|avantgo|blackberry|bada\/|bb|meego|ipad|playbook|silk|tablet|windows phone|mobile|iemobile|opera mini|palm|phone|kindle|silk|mmp|symbian|vodafone|opera mobi|opera mini|ucbrowser|smartphone|mib|mqqbrowser|midp|j2me/i.test((navigator.userAgent || navigator.vendor || window.opera).toLowerCase())) {
+            url = params.get('mobile')?.trim();
+        } else {
+            url = params.get('pc')?.trim();
+        }
+
+        location.href = location.protocol + url;
+    </script>
+    <nosciprt>오류: Javascript를 실행할 수 없습니다.</nosciprt>
+</body>
+
+</html>
