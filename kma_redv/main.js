@@ -71,14 +71,14 @@ function onPlayerStateChange(event) {
             return;
         case YT.PlayerState.PLAYING: // 1(재생 중)
             console.log('1(재생 중)');
-            showOverlay(false);
+            //showOverlay(false);
             return;
         case YT.PlayerState.PAUSED: // 2(일시중지됨)
             console.log('2(일시중지됨)');
             return;
         case YT.PlayerState.BUFFERING: // 3(버퍼링 중)
             console.log('3(버퍼링 중)');
-            showOverlay(true);
+            //showOverlay(true);
             return;
         case YT.PlayerState.CUED: // 5(동영상 신호)
             console.log('5(동영상 신호)');
